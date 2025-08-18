@@ -1,26 +1,221 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* NOTE: Custom scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+::-webkit-scrollbar-track {
+  background: #0f172a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* NOTE: Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* NOTE: Custom focus styles for better accessibility */
+*:focus {
+  outline: none;
+}
+
+/* NOTE: Selection color for dark theme */
+::selection {
+  background: rgba(139, 92, 246, 0.2);
+  color: white;
+}
+
+/* NOTE: Floating animations for background elements */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(20px); }
+  75% { transform: translateY(-30px) translateX(5px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-15px) translateX(-15px); }
+  50% { transform: translateY(-25px) translateX(10px); }
+  75% { transform: translateY(-5px) translateX(20px); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-30px) translateX(5px); }
+  50% { transform: translateY(-15px) translateX(-20px); }
+  75% { transform: translateY(-25px) translateX(15px); }
+}
+
+@keyframes float-4 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(-10px); }
+  50% { transform: translateY(-20px) translateX(15px); }
+  75% { transform: translateY(-5px) translateX(-15px); }
+}
+
+@keyframes float-5 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-25px) translateX(20px); }
+  50% { transform: translateY(-15px) translateX(-10px); }
+  75% { transform: translateY(-30px) translateX(5px); }
+}
+
+@keyframes float-6 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(-15px); }
+  50% { transform: translateY(-10px) translateX(20px); }
+  75% { transform: translateY(-25px) translateX(-5px); }
+}
+
+@keyframes float-7 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-15px) translateX(10px); }
+  50% { transform: translateY(-30px) translateX(-20px); }
+  75% { transform: translateY(-5px) translateX(15px); }
+}
+
+@keyframes float-8 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-25px) translateX(-10px); }
+  50% { transform: translateY(-15px) translateX(25px); }
+  75% { transform: translateY(-20px) translateX(-5px); }
+}
+
+@keyframes float-9 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(15px); }
+  50% { transform: translateY(-30px) translateX(-15px); }
+  75% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes float-10 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-18px) translateX(12px); }
+  50% { transform: translateY(-12px) translateX(-18px); }
+  75% { transform: translateY(-22px) translateX(8px); }
+}
+
+@keyframes float-11 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-16px) translateX(-14px); }
+  50% { transform: translateY(-28px) translateX(16px); }
+  75% { transform: translateY(-8px) translateX(-12px); }
+}
+
+@keyframes float-12 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-14px) translateX(18px); }
+  50% { transform: translateY(-26px) translateX(-8px); }
+  75% { transform: translateY(-12px) translateX(14px); }
+}
+
+.animate-float-1 { animation: float-1 8s ease-in-out infinite; }
+.animate-float-2 { animation: float-2 10s ease-in-out infinite; }
+.animate-float-3 { animation: float-3 12s ease-in-out infinite; }
+.animate-float-4 { animation: float-4 9s ease-in-out infinite; }
+.animate-float-5 { animation: float-5 11s ease-in-out infinite; }
+.animate-float-6 { animation: float-6 7s ease-in-out infinite; }
+.animate-float-7 { animation: float-7 13s ease-in-out infinite; }
+.animate-float-8 { animation: float-8 8.5s ease-in-out infinite; }
+.animate-float-9 { animation: float-9 9.5s ease-in-out infinite; }
+.animate-float-10 { animation: float-10 9.5s ease-in-out infinite; }
+.animate-float-11 { animation: float-11 8.5s ease-in-out infinite; }
+.animate-float-12 { animation: float-12 10.5s ease-in-out infinite; }
+
+/* NOTE: Custom animations for modern UI */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes royal-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-royal-shimmer {
+  background: linear-gradient(90deg, #7c3aed, #8b5cf6, #a855f7, #7c3aed);
+  background-size: 200% 100%;
+  animation: royal-shimmer 3s ease-in-out infinite;
+}
+
+/* NOTE: Smooth transitions for interactive elements */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* NOTE: Hover effects for cards */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* NOTE: Royal purple theme enhancements */
+.royal-gradient {
+  background: linear-gradient(135deg, #581c87, #7c3aed, #8b5cf6);
+}
+
+.royal-shadow {
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+}
+
+.royal-border {
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
